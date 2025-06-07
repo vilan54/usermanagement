@@ -2,6 +2,9 @@ package com.pablovilan.usermanagement.model.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.GrantedAuthority;
+import java.util.Collection;
 
 /**
  * Entity class representing a User in the system.
@@ -12,7 +15,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements UserDetails{
     /**
      * Unique identifier for the user.
      * This is the primary key of the "users" table.
@@ -88,6 +91,32 @@ public class User {
         this.role = role;
     }
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        // Devuelve la lista de permisos asociados al rol del usuario
+        return role.getPermissions(); // role.getPermissions() debe devolver List<Permission> que implementa GrantedAuthority
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true; 
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true; 
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true; 
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true; 
+    }
+
     // Getters and Setters
     
     public Long getId() {
@@ -98,6 +127,7 @@ public class User {
         this.id = id;
     }
 
+    @Override
     public String getUsername() {
         return username;
     }
@@ -106,6 +136,7 @@ public class User {
         this.username = username;
     }
 
+    @Override
     public String getPassword() {
         return password;
     }

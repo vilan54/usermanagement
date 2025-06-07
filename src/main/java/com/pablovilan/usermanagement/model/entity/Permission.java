@@ -1,5 +1,7 @@
 package com.pablovilan.usermanagement.model.entity;
 
+import org.springframework.security.core.GrantedAuthority;
+
 import jakarta.persistence.*;
 
 /**
@@ -9,7 +11,7 @@ import jakarta.persistence.*;
  */
 @Entity
 @Table(name = "permissions")
-public class Permission {
+public class Permission implements GrantedAuthority{
 
     /**
      * Unique identifier for the permission.
@@ -48,6 +50,17 @@ public class Permission {
     public Permission(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    /**
+     * Returns the authority granted by this permission.
+     * This method is required by the GrantedAuthority interface.
+     *
+     * @return the name of the permission
+     */
+    @Override
+    public String getAuthority() {
+        return this.name;
     }
 
     // Getters and Setters
