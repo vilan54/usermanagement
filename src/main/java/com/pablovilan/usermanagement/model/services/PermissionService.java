@@ -4,6 +4,11 @@ import java.util.List;
 
 import com.pablovilan.usermanagement.model.entity.Permission;
 
+/**
+ * Service interface for managing permissions in the system.
+ * This interface defines methods for creating, deleting, finding permissions,
+ * and assigning/removing permissions to/from roles.
+ */
 public interface PermissionService {
 
     /**

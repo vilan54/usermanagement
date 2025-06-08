@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.pablovilan.usermanagement"},{"l":"com.pablovilan.usermanagement.model.dao"},{"l":"com.pablovilan.usermanagement.model.entity"},{"l":"com.pablovilan.usermanagement.model.services"}];updateSearchResults();

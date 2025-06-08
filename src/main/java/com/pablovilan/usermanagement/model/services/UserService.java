@@ -4,6 +4,11 @@ import java.util.List;
 
 import com.pablovilan.usermanagement.model.entity.User;
 
+/**
+ * Service interface for managing users in the system.
+ * This interface defines methods for creating, deleting, finding, and updating users,
+ * as well as checking user existence by username and email.
+ */
 public interface UserService {
 
     /**

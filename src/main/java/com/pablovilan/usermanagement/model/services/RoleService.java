@@ -2,6 +2,11 @@ package com.pablovilan.usermanagement.model.services;
 
 import com.pablovilan.usermanagement.model.entity.Role;
 
+/**
+ * Service interface for managing roles in the system.
+ * This interface defines methods for creating, deleting, finding roles,
+ * and assigning/removing roles to/from users.
+ */
 public interface RoleService {
     
     /**
