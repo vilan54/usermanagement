@@ -4,6 +4,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.pablovilan.usermanagement.model.entity.User;
 
+/**
+ * Data Access Object (DAO) interface for managing users.
+ * This interface extends JpaRepository to provide CRUD operations for User entities.
+ * It includes methods to find a user by their username and check if a user exists by their email.
+ */
 public interface UserDao extends JpaRepository<User, Long> {
 
     /**

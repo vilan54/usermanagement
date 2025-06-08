@@ -4,6 +4,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.pablovilan.usermanagement.model.entity.Role;
 
+/**
+ * Data Access Object (DAO) interface for managing roles.
+ * This interface extends JpaRepository to provide CRUD operations for Role entities.
+ * It includes methods to find a role by its name and check if a role exists by its name.
+ */
 public interface RoleDao extends JpaRepository<Role, Long> {
 
     /**

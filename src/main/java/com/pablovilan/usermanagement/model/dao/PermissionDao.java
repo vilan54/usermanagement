@@ -1,9 +1,14 @@
 package com.pablovilan.usermanagement.model.dao;
 
-import java.security.Permission;
+import com.pablovilan.usermanagement.model.entity.Permission;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+/**
+ * Data Access Object (DAO) interface for managing permissions.
+ * This interface extends JpaRepository to provide CRUD operations for Permission entities.
+ * It includes methods to find a permission by its name and check if a permission exists by its name.
+ */
 public interface PermissionDao extends JpaRepository<Permission, Long> {
 
     /**
